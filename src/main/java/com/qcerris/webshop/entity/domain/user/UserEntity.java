@@ -1,11 +1,10 @@
 package com.qcerris.webshop.entity.domain.user;
 
 import com.qcerris.webshop.entity.domain.BaseEntity;
+import com.qcerris.webshop.entity.domain.paypalAccount.PaypalAccountEntity;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -27,4 +26,8 @@ public class UserEntity extends BaseEntity {
 
     @Column(name = "lastname")
     private String lastName;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private PaypalAccountEntity paypalAccount;
 }
