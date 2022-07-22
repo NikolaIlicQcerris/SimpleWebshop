@@ -11,7 +11,6 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 @Entity
 @Table(name = "shopping_cart")
@@ -23,15 +22,58 @@ public class ShoppingCartEntity extends BaseEntity {
     @Column(name = "status")
     private ShoppingCartStatus status;
 
+    @Setter(AccessLevel.NONE)
     @Column(name = "price")
     private Double price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity user;
 
+    @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "shoppingCart",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
     private List<ItemEntity> items;
 
+    public ShoppingCartEntity(String name,
+                              ShoppingCartStatus status,
+                              UserEntity user,
+                              List<ItemEntity> items) {
+        this.name = name;
+        this.status = status;
+        this.user = user;
+        this.items = items;
+        setPrice(items);
+
+
+    }
+
+    private void setPrice(List<ItemEntity> items) {
+        if (items != null && !items.isEmpty()) {
+            for (ItemEntity item : items) {
+                if (item != null)
+                    this.price += item.getPrice();
+            }
+        }
+
+    }
+
+    public void setItems(List<ItemEntity> items) {
+        this.items = items;
+        setPrice(items);
+    }
+
+    public void addItemToCart(ItemEntity item) {
+        if (item != null){
+            this.items.add(item);
+            this.price+=item.getPrice();
+        }
+    }
+
+    public void removeItemFromCart(ItemEntity item) {
+        if (item != null){
+            this.items.remove(item);
+            this.price-=item.getPrice();
+        }
+    }
 }

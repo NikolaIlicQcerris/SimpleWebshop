@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @ToString
 @Entity
 @Table(name = "paypal_account")
-public class PaypalAccountEntity extends BaseEntity{
+public class PaypalAccountEntity extends BaseEntity {
 
     @Column(name = "account_id")
     private String accountId;
@@ -28,14 +28,14 @@ public class PaypalAccountEntity extends BaseEntity{
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride( name = "country", column = @Column(name = "country")),
-            @AttributeOverride( name = "city", column = @Column(name = "city")),
-            @AttributeOverride( name = "postalCode", column = @Column(name = "postal_code")),
-            @AttributeOverride( name = "street", column = @Column(name = "street"))
+            @AttributeOverride(name = "country", column = @Column(name = "country")),
+            @AttributeOverride(name = "city", column = @Column(name = "city")),
+            @AttributeOverride(name = "postalCode", column = @Column(name = "postal_code")),
+            @AttributeOverride(name = "street", column = @Column(name = "street"))
     })
     private Address address;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
     @MapsId
     private UserEntity user;
 }

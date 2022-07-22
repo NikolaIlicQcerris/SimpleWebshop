@@ -30,7 +30,7 @@ public class UserEntity extends BaseEntity {
     private String lastName;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
+            fetch = FetchType.LAZY, orphanRemoval = true)
     private PaypalAccountEntity paypalAccount;
 
     @OneToMany(
