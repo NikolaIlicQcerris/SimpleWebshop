@@ -2,9 +2,11 @@ package com.qcerris.webshop.entity.domain.user;
 
 import com.qcerris.webshop.entity.domain.BaseEntity;
 import com.qcerris.webshop.entity.domain.paypalAccount.PaypalAccountEntity;
+import com.qcerris.webshop.entity.domain.shoppingCart.ShoppingCartEntity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,4 +32,12 @@ public class UserEntity extends BaseEntity {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
     private PaypalAccountEntity paypalAccount;
+
+    @OneToMany(
+            mappedBy = "user",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<ShoppingCartEntity> shoppingCarts;
+
 }
