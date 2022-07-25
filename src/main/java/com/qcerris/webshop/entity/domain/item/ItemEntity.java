@@ -27,7 +27,7 @@ public class ItemEntity extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private ProductEntity product;
 
-    ItemEntity(Integer quantity, ShoppingCartEntity shoppingCart, ProductEntity product) {
+    public ItemEntity(Integer quantity, ShoppingCartEntity shoppingCart, ProductEntity product) {
         this.quantity = quantity;
         this.product = product;
         this.shoppingCart = shoppingCart;

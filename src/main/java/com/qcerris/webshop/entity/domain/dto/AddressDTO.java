@@ -1,19 +1,12 @@
-package com.qcerris.webshop.entity.domain.address;
+package com.qcerris.webshop.entity.domain.dto;
 
 import lombok.Data;
 
-import javax.persistence.Embeddable;
-
-@Embeddable
 @Data
-public class Address {
+public class AddressDTO {
 
     private String country;
-
     private String city;
-
     private Integer postalCode;
-
     private String street;
-
 }

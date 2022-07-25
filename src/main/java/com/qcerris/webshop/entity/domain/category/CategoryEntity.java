@@ -20,8 +20,8 @@ public class CategoryEntity extends BaseEntity {
 
     private String name;
 
-//    @ManyToMany(mappedBy = "categories")
-//    private Set<ProductEntity> posts;
+    @ManyToMany(mappedBy = "categories")
+    private Set<ProductEntity> posts;
 
 
 }
