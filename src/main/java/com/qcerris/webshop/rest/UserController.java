@@ -29,4 +29,15 @@ public class UserController {
         return new ResponseEntity<>(userService.fetchUserById(id), HttpStatus.OK);
     }
 
+    @GetMapping(value = "username/{username}",
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserDTO> fetchUserByUsername(@PathVariable String username) {
+        return new ResponseEntity<>(userService.fetchUserByUsername(username), HttpStatus.OK);
+    }
+
+    @DeleteMapping (value = "/{id}")
+    public ResponseEntity<String> deleteUserById(@PathVariable Long id) {
+        return new ResponseEntity<>(userService.deleteUserById(id), HttpStatus.OK);
+    }
+
 }

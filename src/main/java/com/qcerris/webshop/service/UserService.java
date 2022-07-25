@@ -24,7 +24,17 @@ public class UserService {
     }
 
     public UserDTO fetchUserById(Long id) {
-        UserEntity entity=userRepository.getReferenceById(id);
+        UserEntity entity = userRepository.getReferenceById(id);
         return mapstructMapper.userEntityToDTO(entity);
+    }
+
+    public UserDTO fetchUserByUsername(String username) {
+        return mapstructMapper.userEntityToDTO(userRepository.findByUsername(username));
+    }
+
+    public String deleteUserById(Long id) {
+        UserEntity toBeDeleted = userRepository.getReferenceById(id);
+        userRepository.delete(toBeDeleted);
+        return "Successfully deleted user: " + toBeDeleted.getUsername();
     }
 }
