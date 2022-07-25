@@ -31,6 +31,7 @@ public class UserEntity extends BaseEntity {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, orphanRemoval = true)
+    @ToString.Exclude
     private PaypalAccountEntity paypalAccount;
 
     @OneToMany(
@@ -38,6 +39,7 @@ public class UserEntity extends BaseEntity {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+    @ToString.Exclude
     private List<ShoppingCartEntity> shoppingCarts;
 
 }

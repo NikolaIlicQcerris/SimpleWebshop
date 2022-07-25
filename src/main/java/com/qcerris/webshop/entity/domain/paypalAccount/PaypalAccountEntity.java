@@ -1,5 +1,6 @@
 package com.qcerris.webshop.entity.domain.paypalAccount;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.qcerris.webshop.entity.domain.BaseEntity;
 import com.qcerris.webshop.entity.domain.address.Address;
 import com.qcerris.webshop.entity.domain.user.UserEntity;
@@ -35,7 +36,9 @@ public class PaypalAccountEntity extends BaseEntity {
     })
     private Address address;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(fetch = FetchType.LAZY)
     @MapsId
+    @ToString.Exclude
+    @JsonIgnore
     private UserEntity user;
 }
