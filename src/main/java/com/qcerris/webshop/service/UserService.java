@@ -22,4 +22,9 @@ public class UserService {
         UserEntity savedUser = userRepository.save(mapstructMapper.userDTOToEntity(userDTO));
         return mapstructMapper.userEntityToDTO(savedUser);
     }
+
+    public UserDTO fetchUserById(Long id) {
+        UserEntity entity=userRepository.getReferenceById(id);
+        return mapstructMapper.userEntityToDTO(entity);
+    }
 }
