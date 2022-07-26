@@ -4,9 +4,9 @@ import com.qcerris.webshop.domain.dto.UserDTO;
 import com.qcerris.webshop.domain.entity.UserEntity;
 import com.qcerris.webshop.domain.mapper.MapStructMapper;
 import com.qcerris.webshop.repository.UserRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class UserService {
 
     private final MapStructMapper mapstructMapper;
