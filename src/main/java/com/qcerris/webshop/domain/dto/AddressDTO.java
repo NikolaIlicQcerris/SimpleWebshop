@@ -1,4 +1,4 @@
-package com.qcerris.webshop.entity.domain.dto;
+package com.qcerris.webshop.domain.dto;
 
 import lombok.Data;
 

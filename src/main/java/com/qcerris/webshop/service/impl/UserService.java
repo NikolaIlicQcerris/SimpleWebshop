@@ -1,8 +1,8 @@
-package com.qcerris.webshop.service;
+package com.qcerris.webshop.service.impl;
 
-import com.qcerris.webshop.entity.domain.dto.UserDTO;
-import com.qcerris.webshop.entity.domain.user.UserEntity;
-import com.qcerris.webshop.mappers.MapStructMapper;
+import com.qcerris.webshop.domain.dto.UserDTO;
+import com.qcerris.webshop.domain.entity.UserEntity;
+import com.qcerris.webshop.domain.mapper.MapStructMapper;
 import com.qcerris.webshop.repository.UserRepository;
 import org.springframework.stereotype.Component;
 

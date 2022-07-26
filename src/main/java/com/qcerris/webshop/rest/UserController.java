@@ -1,7 +1,7 @@
 package com.qcerris.webshop.rest;
 
-import com.qcerris.webshop.entity.domain.dto.UserDTO;
-import com.qcerris.webshop.service.UserService;
+import com.qcerris.webshop.domain.dto.UserDTO;
+import com.qcerris.webshop.service.impl.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,8 @@
-package com.qcerris.webshop.entity.domain;
+package com.qcerris.webshop.domain.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
 
 @MappedSuperclass
 public class BaseEntity {

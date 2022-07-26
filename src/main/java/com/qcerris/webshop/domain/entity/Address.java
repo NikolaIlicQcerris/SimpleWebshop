@@ -1,4 +1,4 @@
-package com.qcerris.webshop.entity.domain.address;
+package com.qcerris.webshop.domain.entity;
 
 import lombok.Data;
 

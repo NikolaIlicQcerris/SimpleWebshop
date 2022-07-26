@@ -1,8 +1,6 @@
-package com.qcerris.webshop.entity.domain.shoppingCart;
+package com.qcerris.webshop.domain.entity;
 
-import com.qcerris.webshop.entity.domain.BaseEntity;
-import com.qcerris.webshop.entity.domain.item.ItemEntity;
-import com.qcerris.webshop.entity.domain.user.UserEntity;
+import com.qcerris.webshop.domain.entity.enums.ShoppingCartStatus;
 import lombok.*;
 
 import javax.persistence.*;

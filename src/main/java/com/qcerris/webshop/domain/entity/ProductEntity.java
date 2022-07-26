@@ -1,8 +1,5 @@
-package com.qcerris.webshop.entity.domain.product;
+package com.qcerris.webshop.domain.entity;
 
-import com.qcerris.webshop.entity.domain.BaseEntity;
-import com.qcerris.webshop.entity.domain.category.CategoryEntity;
-import com.qcerris.webshop.entity.domain.item.ItemEntity;
 import lombok.*;
 
 import javax.persistence.*;

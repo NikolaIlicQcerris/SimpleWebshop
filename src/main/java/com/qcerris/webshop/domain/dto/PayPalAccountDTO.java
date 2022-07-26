@@ -1,10 +1,9 @@
-package com.qcerris.webshop.entity.domain.dto;
+package com.qcerris.webshop.domain.dto;
 
-import com.qcerris.webshop.entity.domain.address.Address;
-import com.qcerris.webshop.entity.domain.user.UserEntity;
+import com.qcerris.webshop.domain.entity.Address;
+import com.qcerris.webshop.domain.entity.UserEntity;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data

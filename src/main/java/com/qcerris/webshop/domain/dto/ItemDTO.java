@@ -1,7 +1,7 @@
-package com.qcerris.webshop.entity.domain.dto;
+package com.qcerris.webshop.domain.dto;
 
-import com.qcerris.webshop.entity.domain.product.ProductEntity;
-import com.qcerris.webshop.entity.domain.shoppingCart.ShoppingCartEntity;
+import com.qcerris.webshop.domain.entity.ProductEntity;
+import com.qcerris.webshop.domain.entity.ShoppingCartEntity;
 import lombok.Data;
 
 @Data

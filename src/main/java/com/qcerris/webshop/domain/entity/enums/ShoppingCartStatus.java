@@ -1,4 +1,4 @@
-package com.qcerris.webshop.entity.domain.shoppingCart;
+package com.qcerris.webshop.domain.entity.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import org.slf4j.Logger;

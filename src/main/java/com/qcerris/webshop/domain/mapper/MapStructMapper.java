@@ -1,13 +1,7 @@
-package com.qcerris.webshop.mappers;
+package com.qcerris.webshop.domain.mapper;
 
-import com.qcerris.webshop.entity.domain.address.Address;
-import com.qcerris.webshop.entity.domain.category.CategoryEntity;
-import com.qcerris.webshop.entity.domain.dto.*;
-import com.qcerris.webshop.entity.domain.item.ItemEntity;
-import com.qcerris.webshop.entity.domain.paypalAccount.PaypalAccountEntity;
-import com.qcerris.webshop.entity.domain.product.ProductEntity;
-import com.qcerris.webshop.entity.domain.shoppingCart.ShoppingCartEntity;
-import com.qcerris.webshop.entity.domain.user.UserEntity;
+import com.qcerris.webshop.domain.dto.*;
+import com.qcerris.webshop.domain.entity.*;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

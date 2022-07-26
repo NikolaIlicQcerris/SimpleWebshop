@@ -1,9 +1,8 @@
-package com.qcerris.webshop.entity.domain.item;
+package com.qcerris.webshop.domain.entity;
 
-import com.qcerris.webshop.entity.domain.BaseEntity;
-import com.qcerris.webshop.entity.domain.product.ProductEntity;
-import com.qcerris.webshop.entity.domain.shoppingCart.ShoppingCartEntity;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

@@ -1,8 +1,5 @@
-package com.qcerris.webshop.entity.domain.user;
+package com.qcerris.webshop.domain.entity;
 
-import com.qcerris.webshop.entity.domain.BaseEntity;
-import com.qcerris.webshop.entity.domain.paypalAccount.PaypalAccountEntity;
-import com.qcerris.webshop.entity.domain.shoppingCart.ShoppingCartEntity;
 import lombok.*;
 
 import javax.persistence.*;

@@ -1,9 +1,6 @@
-package com.qcerris.webshop.entity.domain.paypalAccount;
+package com.qcerris.webshop.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.qcerris.webshop.entity.domain.BaseEntity;
-import com.qcerris.webshop.entity.domain.address.Address;
-import com.qcerris.webshop.entity.domain.user.UserEntity;
 import lombok.*;
 
 import javax.persistence.*;
