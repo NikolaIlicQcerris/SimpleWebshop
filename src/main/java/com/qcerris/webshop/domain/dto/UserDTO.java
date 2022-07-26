@@ -2,11 +2,19 @@ package com.qcerris.webshop.domain.dto;
 
 import com.qcerris.webshop.domain.entity.PaypalAccountEntity;
 import com.qcerris.webshop.domain.entity.ShoppingCartEntity;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Component
 public class UserDTO {
 
     private Long id;
