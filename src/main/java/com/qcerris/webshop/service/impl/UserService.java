@@ -2,34 +2,34 @@ package com.qcerris.webshop.service.impl;
 
 import com.qcerris.webshop.domain.dto.UserDTO;
 import com.qcerris.webshop.domain.entity.UserEntity;
-import com.qcerris.webshop.domain.mapper.MapStructMapper;
+import com.qcerris.webshop.domain.mapper.UserMapper;
 import com.qcerris.webshop.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    private final MapStructMapper mapstructMapper;
+    private final UserMapper userMapper;
     private final UserRepository userRepository;
 
-    public UserService(MapStructMapper mapstructMapper, UserRepository userRepository) {
-        this.mapstructMapper = mapstructMapper;
+    public UserService(UserMapper userMapper, UserRepository userRepository) {
+        this.userMapper = userMapper;
         this.userRepository = userRepository;
     }
 
     public UserDTO insertNewUser(UserDTO userDTO) {
 
-        UserEntity savedUser = userRepository.save(mapstructMapper.userDTOToEntity(userDTO));
-        return mapstructMapper.userEntityToDTO(savedUser);
+        UserEntity savedUser = userRepository.save(userMapper.userDTOToEntity(userDTO));
+        return userMapper.userEntityToDTO(savedUser);
     }
 
     public UserDTO fetchUserById(Long id) {
         UserEntity entity = userRepository.getReferenceById(id);
-        return mapstructMapper.userEntityToDTO(entity);
+        return userMapper.userEntityToDTO(entity);
     }
 
     public UserDTO fetchUserByUsername(String username) {
-        return mapstructMapper.userEntityToDTO(userRepository.findByUsername(username));
+        return userMapper.userEntityToDTO(userRepository.findByUsername(username));
     }
 
     public String deleteUserById(Long id) {
