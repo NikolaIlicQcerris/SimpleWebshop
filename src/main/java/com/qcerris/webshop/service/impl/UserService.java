@@ -6,6 +6,8 @@ import com.qcerris.webshop.domain.mapper.UserMapper;
 import com.qcerris.webshop.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -36,5 +38,10 @@ public class UserService {
         UserEntity toBeDeleted = userRepository.getReferenceById(id);
         userRepository.delete(toBeDeleted);
         return "Successfully deleted user: " + toBeDeleted.getUsername();
+    }
+
+    public List<UserDTO> getAllUsers() {
+        List<UserEntity> entityList = userRepository.findAll();
+        return userMapper.userEntityToDTO(entityList);
     }
 }
