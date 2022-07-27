@@ -27,9 +27,12 @@ public class UserService {
         return userMapper.userEntityToDTO(savedUser);
     }
 
+    public UserEntity fetchUserEntityById(Long id) {
+        return userRepository.findById(id).get();
+    }
+
     public UserDTO fetchUserById(Long id) {
-        UserEntity entity = userRepository.getReferenceById(id);
-        return userMapper.userEntityToDTO(entity);
+        return userMapper.userEntityToDTO(fetchUserEntityById(id));
     }
 
     public UserDTO fetchUserByUsername(String username) {
