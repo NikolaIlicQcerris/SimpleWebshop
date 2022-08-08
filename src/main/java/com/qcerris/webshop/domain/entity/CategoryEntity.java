@@ -19,7 +19,8 @@ public class CategoryEntity extends BaseEntity {
     private String name;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<ProductEntity> posts;
+    @ToString.Exclude
+    private Set<ProductEntity> products;
 
 
 }
