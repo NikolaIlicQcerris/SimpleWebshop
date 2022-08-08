@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class PaypalAccountService {
 
     private final PaypalAccountRepository paypalAccountRepository;
@@ -58,7 +59,6 @@ public class PaypalAccountService {
     }
 
     @Modifying
-    @Transactional
     public PayPalAccountDTO updatePayPallAccount(PayPalAccountDTO payPalAccountDTO) {
 
         PaypalAccountEntity paypalAccount = paypalAccountRepository.findByUserId(payPalAccountDTO.getUserId());
