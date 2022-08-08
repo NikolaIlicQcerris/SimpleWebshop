@@ -1,5 +1,7 @@
 package com.qcerris.webshop.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.qcerris.webshop.domain.entity.Address;
 import com.qcerris.webshop.domain.entity.UserEntity;
 import lombok.AllArgsConstructor;
@@ -17,11 +19,15 @@ import java.time.LocalDate;
 @Component
 public class PayPalAccountDTO {
 
-    private Long id;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Long userId;
+
     private String accountId;
     private LocalDate expiresOn;
     private Double budget;
     private Address address;
+
+    @JsonIgnore
     private UserEntity user;
 
 }

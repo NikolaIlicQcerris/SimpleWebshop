@@ -7,6 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
@@ -29,10 +31,22 @@ public class UserController {
         return new ResponseEntity<>(userService.fetchUserById(id), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/all",
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
+        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+    }
+
     @GetMapping(value = "username/{username}",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserDTO> fetchUserByUsername(@PathVariable String username) {
         return new ResponseEntity<>(userService.fetchUserByUsername(username), HttpStatus.OK);
+    }
+
+    @PutMapping (consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserDTO> updateUser(@RequestBody UserDTO userDTO) {
+        return new ResponseEntity<>(userService.updateUser(userDTO), HttpStatus.OK);
     }
 
     @DeleteMapping (value = "/{id}")
