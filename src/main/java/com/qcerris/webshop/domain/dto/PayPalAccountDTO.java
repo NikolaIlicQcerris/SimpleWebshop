@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
@@ -16,7 +15,6 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Component
 public class PayPalAccountDTO {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
