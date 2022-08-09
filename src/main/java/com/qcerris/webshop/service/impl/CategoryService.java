@@ -4,11 +4,14 @@ import com.qcerris.webshop.domain.dto.CategoryDTO;
 import com.qcerris.webshop.domain.entity.CategoryEntity;
 import com.qcerris.webshop.domain.mapper.CategoryMapper;
 import com.qcerris.webshop.repository.CategoryRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
@@ -19,6 +22,7 @@ public class CategoryService {
         this.categoryMapper = categoryMapper;
     }
 
+    @Modifying
     public CategoryDTO insertNewCategory(CategoryDTO categoryDTO) {
         CategoryEntity savedCategory = categoryRepository.save(categoryMapper.categoryDTOToEntity(categoryDTO));
         return categoryMapper.categoryToDTO(savedCategory);
@@ -28,6 +32,7 @@ public class CategoryService {
         return categoryMapper.categoryToDTO(categoryRepository.findById(id).get());
     }
 
+    @Modifying
     public String deleteCategoryById(Long id) {
         CategoryEntity toBeDeleted = categoryRepository.getReferenceById(id);
         categoryRepository.delete(toBeDeleted);
@@ -38,7 +43,7 @@ public class CategoryService {
         return categoryMapper.categoryToDTO(categoryRepository.findAll());
     }
 
-
+    @Modifying
     public CategoryDTO updateCategory(CategoryDTO categoryDTO) {
 
         CategoryEntity categoryEntity = categoryRepository.getReferenceById(categoryDTO.getId());
