@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class UserService {
 
     private final UserMapper userMapper;
@@ -51,7 +52,6 @@ public class UserService {
     }
 
     @Modifying
-    @Transactional
     public UserDTO updateUser(UserDTO userDTO) {
 
         UserEntity userEntity = userRepository.getReferenceById(userDTO.getId());

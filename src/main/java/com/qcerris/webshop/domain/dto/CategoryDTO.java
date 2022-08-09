@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
@@ -13,10 +12,9 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Component
 public class CategoryDTO {
 
     private Long id;
     private String name;
-    private Set<ProductEntity> posts;
+    private Set<ProductEntity> products;
 }
